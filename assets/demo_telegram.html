@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MiMo Web3 Research Agent — Demo</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1d3a 100%);
+    color: #e8e8e8;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+.container { max-width: 480px; margin: 0 auto; }
+.header {
+    background: #17212b;
+    padding: 16px 20px;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 1px solid #243447;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+.bot-info h1 { font-size: 16px; color: #fff; }
+.bot-info p { font-size: 13px; color: #708499; margin-top: 2px; }
+.chat {
+    background: #0e1621;
+    padding: 16px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.msg {
+    max-width: 85%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+.msg-user {
+    align-self: flex-end;
+    background: #2b5278;
+    color: #fff;
+    border-bottom-right-radius: 4px;
+}
+.msg-bot {
+    align-self: flex-start;
+    background: #182533;
+    color: #e8e8e8;
+    border-bottom-left-radius: 4px;
+    font-family: 'SF Mono', 'Monaco', monospace;
+    font-size: 13px;
+}
+.msg-bot strong { color: #6ab7ff; }
+.msg-bot em { color: #708499; font-style: normal; }
+.msg-bot code {
+    background: #0e1621;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #ff7a59;
+    font-size: 12px;
+}
+.timestamp {
+    font-size: 11px;
+    color: #708499;
+    text-align: right;
+    margin-top: 4px;
+}
+.footer {
+    background: #17212b;
+    padding: 12px 16px;
+    border-radius: 0 0 12px 12px;
+    border-top: 1px solid #243447;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.input {
+    flex: 1;
+    background: #242f3d;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+}
+.send-btn {
+    width: 36px;
+    height: 36px;
+    background: #2b5278;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+.tagline {
+    text-align: center;
+    margin-top: 24px;
+    color: #708499;
+    font-size: 13px;
+}
+.tagline strong { color: #ff7a59; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="avatar">M</div>
+        <div class="bot-info">
+            <h1>MiMo Web3 Research Bot</h1>
+            <p>online · powered by Xiaomi MiMo</p>
+        </div>
+    </div>
+
+    <div class="chat">
+        <div class="msg msg-user">/brief
+            <div class="timestamp">07:00</div>
+        </div>
+
+        <div class="msg msg-bot">⏳ Generating briefing...</div>
+
+        <div class="msg msg-bot">📊 <strong>Web3 Research Briefing</strong>
+<em>Friday, 22 May 2026 — 07:00 WIB</em>
+──────────────────────────────
+
+<strong>TL;DR</strong>
+• AI agents on Base ecosystem hitting parabolic growth (+40% MoM TVL)
+• Whale rotation from CEX to L2s — $7.2M moved in 24h
+• Vitalik signals decentralized AI roadmap = bullish for agent infra
+
+<strong>Market Pulse</strong>
+3 whale txs detected (>$1M each):
+• Binance14 → unknown wallet: $4.36M ETH on Arbitrum
+• WhaleAlpha → multisig: $1.83M ETH on Base
+• Cobie → DAI vault: $1.09M ETH on Optimism
+
+<strong>Social Signals (Sentiment: +0.20 🟡)</strong>
+Top themes: AI agents, L2 migration, security
+Bullish narrative dominant on Farcaster /base channel
+
+<strong>Watch List</strong>
+1. Base AI agent protocols launching this week
+2. Arbitrum DEX volume spike correlation
+3. Optimism Superchain new chain announcement</div>
+
+        <div class="msg msg-user">/whales
+            <div class="timestamp">09:15</div>
+        </div>
+
+        <div class="msg msg-bot">🐋 <strong>Recent Whale Activity (24h)</strong>
+
+🐋 [ARBITRUM] Binance14: 1247.50 ETH ($4,365,625)
+   tx: <code>0xabffffff...</code>
+
+🐋 [BASE] WhaleAlpha: 523.10 ETH ($1,830,850)
+   tx: <code>0xcdeeeeee...</code>
+
+🐋 [OPTIMISM] Cobie: 312.70 ETH ($1,094,450)
+   tx: <code>0xef111111...</code></div>
+
+        <div class="msg msg-bot">🚨 <strong>WHALE ALERT</strong>
+Chain: <code>ARBITRUM</code>
+Value: <strong>$4,365,625</strong> (1247.50 ETH)
+From: <code>0x28c6c062...</code>
+To: <code>0x1f9090aa...</code>
+Tx: <code>0xabffffff...</code></div>
+
+        <div class="msg msg-user">/sentiment
+            <div class="timestamp">12:30</div>
+        </div>
+
+        <div class="msg msg-bot">🟡 <strong>Market Sentiment (12h)</strong>
+
+Score: <strong>+0.200</strong>
+Posts analyzed: 47
+
+<strong>Key Themes:</strong>
+• AI agents adoption
+• L2 ecosystem growth
+• Onchain identity primitives
+
+<strong>Bullish:</strong>
+🟢 Base AI protocol explosion
+🟢 Arbitrum active wallet leadership
+🟢 MiMo agents production-ready
+
+<strong>Bearish:</strong>
+🔴 Recent unaudited protocol exploit
+🔴 Macro uncertainty</div>
+    </div>
+
+    <div class="footer">
+        <input class="input" placeholder="Message" disabled value="/status">
+        <button class="send-btn">→</button>
+    </div>
+
+    <div class="tagline">
+        <strong>MiMo Web3 Research Agent</strong> · AI-Powered Onchain Intelligence
+    </div>
+</div>
+</body>
+</html>
