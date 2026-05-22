@@ -1,0 +1,77 @@
+# MiMo Web3 Research Agent — Configuration
+
+agent:
+  name: "MiMo Web3 Research"
+  version: "0.1.0"
+  timezone: "Asia/Jakarta"
+
+# Whale watching thresholds (USD value)
+whale_watching:
+  enabled: true
+  chains:
+    - arbitrum
+    - base
+    - optimism
+  min_tx_value_usd: 100000  # $100k+
+  watched_wallets:
+    # Add specific wallets to track
+    - address: "0x0000000000000000000000000000000000000000"
+      label: "example"
+  poll_interval_seconds: 300  # 5 minutes
+
+# Social monitoring
+social:
+  farcaster:
+    enabled: true
+    channels:
+      - "/base"
+      - "/arbitrum"
+      - "/defi"
+      - "/ai-agents"
+    keywords:
+      - "ai agent"
+      - "onchain"
+      - "defi"
+    poll_interval_seconds: 600  # 10 minutes
+  
+  twitter:
+    enabled: true
+    accounts:
+      - "VitalikButerin"
+      - "dabit3"
+      - "0xfoobar"
+    keywords:
+      - "ai agent crypto"
+      - "L2 scaling"
+    poll_interval_seconds: 900  # 15 minutes
+
+# News sources
+news:
+  enabled: true
+  rss_feeds:
+    - name: "The Defiant"
+      url: "https://thedefiant.io/api/feed"
+    - name: "Bankless"
+      url: "https://newsletter.banklesshq.com/feed"
+    - name: "The Block"
+      url: "https://www.theblock.co/rss.xml"
+    - name: "CoinDesk"
+      url: "https://www.coindesk.com/arc/outboundfeeds/rss/"
+  poll_interval_seconds: 1800  # 30 minutes
+
+# Daily briefing
+briefing:
+  enabled: true
+  time: "07:00"  # WIB
+  sections:
+    - market_overview
+    - whale_activity
+    - social_sentiment
+    - news_summary
+    - ai_insights
+
+# Alerts
+alerts:
+  whale_threshold_usd: 500000  # $500k+ alerts
+  sentiment_shift_threshold: 0.3
+  cooldown_minutes: 15
